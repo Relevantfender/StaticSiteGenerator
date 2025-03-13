@@ -16,7 +16,8 @@ index_path = r"./template.html"
 
 def main():
     basepath = default_basepath
-    if len(sys.argv)>1:
+    
+    if len(sys.argv)>1: 
         basepath = sys.argv[1]
     copy_content(destination=dest_dir_path, source= src_dir_path)
     generate_pages_recursive(
