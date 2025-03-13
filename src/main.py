@@ -8,26 +8,22 @@ from copystatic import copy_content
 import sys
 
 
-print("Hello world")
+dest_dir_path = r"./docs"
+src_dir_path = r"./static"
+markdown_path = r"./content"
+default_basepath = "/"
+index_path = r"./template.html"
 
 def main():
-    textNode = TextNode(
-        "This is some anchor text", 
-        text_type= TextType.LINKS, url = "https://www.boot.dev")
-    text = textNode.__repr__()
-    print(text)
-    
-    dest_dir_path = r"./docs"
-    src_dir_path = r"./static"
-    markdown_path = r"./content"
-    index_path = r"./template.html"
+    basepath = default_basepath
+    if len(sys.argv) >1:
+        basepath = sys.argv[1]
     copy_content(destination=dest_dir_path, source= src_dir_path)
-    basepath = sys.argv
     generate_pages_recursive(
         dir_path_content=markdown_path,
         template_path=index_path,
         dest_dir_path=dest_dir_path,
-        BASEPATH = basepath)
+        basepath = basepath)
 
     
     

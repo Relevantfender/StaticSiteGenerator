@@ -4,11 +4,11 @@ import shutil
 def copy_content(destination, source):
     src_dir_path = source
     
-    #check if exists, if not, create
+  
     if not os.path.exists(destination):
         os.mkdir(f"{destination}")
 
-    # remove everything from public
+    
     pub_dir = os.listdir(destination)
     for file in pub_dir:
         file_path = os.path.join(destination, file)
