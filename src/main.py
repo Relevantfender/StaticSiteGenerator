@@ -25,9 +25,4 @@ def main():
         dest_dir_path=dest_dir_path,
         basepath = basepath)
 
-    
-    
-
-
-
 main()
